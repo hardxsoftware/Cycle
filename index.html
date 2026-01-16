@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Of Violence - Tour 2026</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .background-artwork {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Assets/Artwork.png');
+            background-size: 40% auto;
+            background-position: center 50px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+            opacity: 0;
+            transform: scale(1.2);
+            animation: fadeInScale 1.5s ease-out forwards;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .logo-section {
+            text-align: center;
+            padding: 20px 0;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s ease-out 1.5s forwards;
+        }
+        .artwork-section {
+            display: none;
+        }
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 40px;
+        }
+        .lineup-section {
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s ease-out 2s forwards;
+        }
+        .lineup-section img {
+            max-width: 800px;
+            height: auto;
+        }
+        .tour-dates-section {
+            padding: 20px;
+            opacity: 1;
+        }
+        .tour-date-card {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .tour-date-card:nth-child(1) {
+            animation: popIn 0.5s ease-out 2.5s forwards;
+        }
+        .tour-date-card:nth-child(2) {
+            animation: popIn 0.5s ease-out 2.7s forwards;
+        }
+        .tour-date-card:nth-child(3) {
+            animation: popIn 0.5s ease-out 2.9s forwards;
+        }
+        .tour-date-card:nth-child(4) {
+            animation: popIn 0.5s ease-out 3.1s forwards;
+        }
+        .tour-date-card:nth-child(5) {
+            animation: popIn 0.5s ease-out 3.3s forwards;
+        }
+        .tour-date-card:nth-child(6) {
+            animation: popIn 0.5s ease-out 3.5s forwards;
+        }
+        .logo {
+            max-width: 500px;
+            height: auto;
+        }
+        .lineup {
+            max-width: 800px;
+            height: auto;
+        }
+        .tour-dates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-items: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .tour-date-card img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            transition: transform 0.2s ease;
+        }
+        .tour-date-card:hover img {
+            transform: scale(1.05);
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .tour-dates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .logo {
+                max-width: 400px;
+            }
+            .lineup {
+                max-width: 600px;
+            }
+            .tour-date-card img {
+                max-height: 60px;
+            }
+            .content-wrapper {
+                padding-bottom: 30px;
+            }
+        }
+        @media (max-width: 480px) {
+            .background-artwork {
+                background-size: auto 66%;
+            }
+            .tour-dates-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .logo {
+                max-width: 400px;
+            }
+            .lineup-section img {
+                max-width: 400px;
+                height: auto;
+            }
+            .lineup img {
+                content: url('Assets/Lineup-Mobile.png');
+            }
+            .tour-date-card img {
+                max-height: 40px;
+            }
+            .content-wrapper {
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-artwork"></div>
+    <div class="container">
+        <!-- Logo Section -->
+        <header class="logo-section">
+            <img src="Assets/Logo.png" alt="Cycle Of Violence Logo" class="logo">
+        </header>
+
+        <!-- Content Wrapper for bottom alignment -->
+        <div class="content-wrapper">
+            <!-- Lineup Section -->
+            <section class="lineup-section">
+                <img src="Assets/Lineup.png" alt="Tour Lineup" class="lineup">
+            </section>
+
+            <!-- Tour Dates Section -->
+            <section class="tour-dates-section">
+                <div class="tour-dates-grid">
+                    <div class="tour-date-card">
+                        <img src="Assets/TourDates_01.png" alt="Tour Date 1">
+                    </div>
+                    <div class="tour-date-card">
+                        <img src="Assets/TourDates_02.png" alt="Tour Date 2">
+                    </div>
+                    <div class="tour-date-card">
+                        <img src="Assets/TourDates_03.png" alt="Tour Date 3">
+                    </div>
+                    <div class="tour-date-card">
+                        <img src="Assets/TourDates_04.png" alt="Tour Date 4">
+                    </div>
+                    <div class="tour-date-card">
+                        <img src="Assets/TourDates_05.png" alt="Tour Date 5">
+                    </div>
+                    <div class="tour-date-card">
+                        <img src="Assets/TourDates_06.png" alt="Tour Date 6">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -29,9 +29,9 @@
             padding: 0;
             overflow-x: hidden;
             background-image: url('Assets/background_texture.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: top left;
+            background-repeat: repeat;
             background-attachment: fixed;
         }
         
@@ -212,6 +212,19 @@
         .tour-date-card.active .available-soon-overlay {
             opacity: 1;
         }
+        
+        /* Mobile: Always show available soon overlays */
+        @media (max-width: 768px) {
+            .available-soon-overlay {
+                opacity: 1;
+                pointer-events: none;
+            }
+            
+            .tour-date-card:hover .available-soon-overlay,
+            .tour-date-card.active .available-soon-overlay {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -343,21 +356,23 @@
                 // Only add overlay functionality to cards that have overlays
                 const overlay = card.querySelector('.available-soon-overlay');
                 if (overlay) {
-                    // Add touch/click functionality for overlay
-                    card.addEventListener('touchstart', function(e) {
-                        e.preventDefault();
-                        this.classList.toggle('active');
-                    });
-                    
-                    card.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        this.classList.toggle('active');
-                    });
-                    
-                    // Remove active class when mouse leaves
-                    card.addEventListener('mouseleave', function() {
-                        this.classList.remove('active');
-                    });
+                    // Only add touch/click functionality on desktop
+                    if (window.innerWidth > 768) {
+                        card.addEventListener('touchstart', function(e) {
+                            e.preventDefault();
+                            this.classList.toggle('active');
+                        });
+                        
+                        card.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            this.classList.toggle('active');
+                        });
+                        
+                        // Remove active class when mouse leaves
+                        card.addEventListener('mouseleave', function() {
+                            this.classList.remove('active');
+                        });
+                    }
                 }
             });
             

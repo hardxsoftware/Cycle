@@ -1,0 +1,51 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Jumpers
+FamilyName:Jumpers
+StyleName:Regular
+FullName:Jumpers
+MenuName:Jumpers
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\MK\Documents\GitHub\Cycle\Assets\Font\jumpers.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:36784
+FileModTime:1768556503
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Jumpers
+NameArray:0,Win,1,Jumpers
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:JumpersSemi-Italic
+FamilyName:Jumpers Semi-Italic
+StyleName:Semi-Italic
+FullName:Jumpers Semi-Italic
+MenuName:Jumpers Semi-Italic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\MK\Documents\GitHub\Cycle\Assets\Font\jumperssemital.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:29664
+FileModTime:1768556503
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Jumpers Semi-Italic
+NameArray:0,Win,1,Jumpers Semi-Italic
+%EndFont
+

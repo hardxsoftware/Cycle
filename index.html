@@ -161,6 +161,37 @@
         .tour-date-link:visited {
             color: inherit;
         }
+        
+        /* Available Soon Overlay */
+        .tour-date-card {
+            position: relative;
+        }
+        
+        .available-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+        
+        .available-soon-overlay img {
+            max-width: 60%;
+            max-height: 60%;
+            object-fit: contain;
+        }
+        
+        .tour-date-card:hover .available-soon-overlay,
+        .tour-date-card.active .available-soon-overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -213,6 +244,9 @@
                         <div class="tour-date-card text-center">
                             <img src="Assets/TourDates_03.png" alt="Tour Date 3" class="img-fluid mb-3">
                             <h5 class="tour-date-time">OPENS 19:00</h5>
+                            <div class="available-soon-overlay">
+                                <img src="Assets/available_soon.png" alt="Available Soon">
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -221,6 +255,9 @@
                         <div class="tour-date-card text-center">
                             <img src="Assets/TourDates_04.png" alt="Tour Date 4" class="img-fluid mb-3">
                             <h5 class="tour-date-time">OPENS 19:00</h5>
+                            <div class="available-soon-overlay">
+                                <img src="Assets/available_soon.png" alt="Available Soon">
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -229,6 +266,9 @@
                         <div class="tour-date-card text-center">
                             <img src="Assets/TourDates_05.png" alt="Tour Date 5" class="img-fluid mb-3">
                             <h5 class="tour-date-time">OPENS 19:00</h5>
+                            <div class="available-soon-overlay">
+                                <img src="Assets/available_soon.png" alt="Available Soon">
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -237,6 +277,9 @@
                         <div class="tour-date-card text-center">
                             <img src="Assets/TourDates_06.png" alt="Tour Date 6" class="img-fluid mb-3">
                             <h5 class="tour-date-time">OPENS 19:00</h5>
+                            <div class="available-soon-overlay">
+                                <img src="Assets/available_soon.png" alt="Available Soon">
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -276,6 +319,26 @@
             
             tourCards.forEach(card => {
                 observer.observe(card);
+                
+                // Only add overlay functionality to cards that have overlays
+                const overlay = card.querySelector('.available-soon-overlay');
+                if (overlay) {
+                    // Add touch/click functionality for overlay
+                    card.addEventListener('touchstart', function(e) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                    });
+                    
+                    card.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                    });
+                    
+                    // Remove active class when mouse leaves
+                    card.addEventListener('mouseleave', function() {
+                        this.classList.remove('active');
+                    });
+                }
             });
             
             if (ctaContainer) {

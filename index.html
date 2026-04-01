@@ -245,6 +245,57 @@
             .tour-date-card.active .available-soon-overlay {
                 opacity: 1;
             }
+            
+            /* Mobile-specific centering and layout */
+            .hero-section {
+                padding: 1rem 0;
+            }
+            
+            .logo-container {
+                padding: 1rem !important;
+            }
+            
+            .lineup-container {
+                padding: 1rem !important;
+            }
+            
+            .tour-dates-section {
+                padding: 2rem 1rem !important;
+            }
+            
+            .tour-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                grid-template-rows: repeat(4, 1fr) !important;
+                gap: 0.5rem !important;
+                max-width: 100% !important;
+                padding: 0 0.5rem !important;
+            }
+            
+            .tour-date-card {
+                padding: 1.5rem !important;
+                min-height: 120px !important;
+            }
+            
+            .tour-location {
+                font-size: 1.5em !important;
+            }
+            
+            .tour-venue {
+                font-size: 1.2em !important;
+            }
+            
+            .tour-date {
+                font-size: 1.1em !important;
+            }
+            
+            .tour-time {
+                font-size: 1em !important;
+            }
+            
+            .cta-container img {
+                max-width: 250px !important;
+                max-height: 120px !important;
+            }
         }
     </style>
 </head>
@@ -270,8 +321,8 @@
         </section>
 
         <!-- Tour Dates Section -->
-        <section class="tour-dates-section vh-100 vw-100 d-flex flex-column justify-content-center align-items-center">
-            <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+        <section class="tour-dates-section vw-100 d-flex flex-column justify-content-center align-items-center py-5">
+            <div class="container d-flex flex-column justify-content-center align-items-center">
                 <div class="cta-container text-center mb-5">
                     <img src="Assets/CTA.png" alt="Call to Action" class="img-fluid">
                 </div>

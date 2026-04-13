@@ -275,16 +275,24 @@
                 pointer-events: none;
             }
             
+            .tickets-at-door-overlay {
+                opacity: 0;
+                pointer-events: none;
+            }
+            
             .tour-date-card:hover .available-soon-overlay,
             .tour-date-card.active .available-soon-overlay {
                 opacity: 1;
             }
             
-            /* Mobile-specific centering and layout */
-            .hero-section {
-                padding: 1rem 0;
+            .tour-date-card:hover .tickets-at-door-overlay,
+            .tour-date-card.active .tickets-at-door-overlay {
+                opacity: 1;
             }
-            
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
             .logo-container {
                 padding: 1rem !important;
             }
@@ -467,9 +475,12 @@
             tourCards.forEach(card => {
                 observer.observe(card);
                 
-                // Only add overlay functionality to cards that have overlays
-                const overlay = card.querySelector('.available-soon-overlay');
-                if (overlay) {
+                // Check for both overlay types
+                const availableSoonOverlay = card.querySelector('.available-soon-overlay');
+                const ticketsAtDoorOverlay = card.querySelector('.tickets-at-door-overlay');
+                
+                // Handle available soon overlay
+                if (availableSoonOverlay) {
                     // Only add touch/click functionality on desktop
                     if (window.innerWidth > 768) {
                         card.addEventListener('touchstart', function(e) {
@@ -488,6 +499,22 @@
                         });
                     }
                 }
+                
+                // Handle tickets at door overlay
+                if (ticketsAtDoorOverlay) {
+                    // Add click functionality for both desktop and mobile
+                    card.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                    });
+                    
+                    // Only add mouseleave on desktop (no hover on mobile)
+                    if (window.innerWidth > 768) {
+                        card.addEventListener('mouseleave', function() {
+                            this.classList.remove('active');
+                        });
+                    }
+                }
             });
             
             if (ctaContainer) {
@@ -495,5 +522,5 @@
             }
         });
     </script>
-</body>
+    </body>
 </html>

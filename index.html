@@ -209,6 +209,38 @@
             color: inherit;
         }
         
+        /* Tickets at Door Overlay */
+        .tickets-at-door-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .tickets-at-door-overlay span {
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 900;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #000;
+            text-shadow: 0 2px 2px #ff0000;
+            font-family: 'Jumpers';
+        }
+        
+        .tour-date-card:hover .tickets-at-door-overlay,
+        .tour-date-card.active .tickets-at-door-overlay {
+            opacity: 1;
+        }
+        
         /* Available Soon Overlay */
         .available-soon-overlay {
             position: absolute;
@@ -344,6 +376,9 @@
                         <h3 class="tour-location">TOKYO</h3>
                         <h5 class="tour-venue">AKIHABARA ONGAKUZAKA</h5>
                         <h5 class="tour-time">19:00</h5>
+                        <div class="tickets-at-door-overlay">
+                            <span>TICKETS AT DOOR</span>
+                        </div>
                     </a>
                 </div>
                 <div class="tour-date-card">
@@ -355,7 +390,7 @@
                     </a>
                 </div>
                 <div class="tour-date-card">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScTMOxorjY2W3lLaY6RyUFgwKeRKILQdwWLqvwWgqVrg9B3cw/viewform" class="tour-date-link">
+                    <a href="https://go.fansi.me/events/560002?utm_source=ig&utm_medium=social&utm_content=link_in_bio" class="tour-date-link">
                         <h5 class="tour-date">4/24</h5>
                         <h3 class="tour-location">TAIPEI</h3>
                         <h3 class="tour-venue">JACK STUDIO</h3>
@@ -366,7 +401,7 @@
                     <a href="https://www.eventbrite.com/e/cycle-of-violence-tour-hong-kong-tickets-1984654997523?aff=oddtdtcreator" class="tour-date-link">
                         <h5 class="tour-date">4/25</h5>
                         <h3 class="tour-location">HONG KONG</h3>
-                        <h5 class="tour-venue">AESTHETIC RADIO</h5>
+                        <h5 class="tour-venue">WAVE MUSIC</h5>
                         <h5 class="tour-time">19:00</h5>
                     </a>
                 </div>
@@ -382,7 +417,7 @@
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLScTMOxorjY2W3lLaY6RyUFgwKeRKILQdwWLqvwWgqVrg9B3cw/viewform" class="tour-date-link">
                         <h5 class="tour-date">5/2</h5>
                         <h3 class="tour-location">SAIGON</h3>
-                        <h5 class="tour-venue">UM BA LA</h5>
+                        <h5 class="tour-venue">KOBE TOWN</h5>
                         <h5 class="tour-time">19:00</h5>
                     </a>
                 </div>
